@@ -3,7 +3,7 @@ def call(String env_var = "none", boolean abort = false, abortPipeline) {
 	if (abortPipeline != true) {
 		if (env_var == 'master') {
 			return
-		} else (String.contains(env_var, 'hotfix')) {
+		} else if (String.contains(env_var, 'hotfix')) {
 			return
 		} else {
 			echo env_var
