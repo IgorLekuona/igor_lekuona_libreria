@@ -1,16 +1,13 @@
 @NonCPS
 def call(boolean abort = false, abortPipeline) {
-	echo 'SonarQube Analysis Library'
-	return 'Done'
-	// if (abortPipeline !== true) {
-	// 	withSonarQubeEnv(credentialsId: 'sonarqube-token') {
-	// 		bat ‘echo “Ejecución de las pruebas de calidad de código”’
-	// 		// def scannerHome = tool name: 'SonarScanner'
-	// 		// bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=practica2 -Dsonar.projectName=Practica2 -Dsonar.projectVersion=${BUILD_NUMBER}-practica2"
-	// 	}
-	// 	timeout(time: 5, unit: 'MINUTES') {
-	// 		waitForQualityGate abortPipeline: abort
-	// 	}
-	// } else return
-
+	if (abortPipeline !== true) {
+		withSonarQubeEnv(credentialsId: 'sonarqube-token') {
+			bat ‘echo “Ejecución de las pruebas de calidad de código”’
+			// def scannerHome = tool name: 'SonarScanner'
+			// bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=practica2 -Dsonar.projectName=Practica2 -Dsonar.projectVersion=${BUILD_NUMBER}-practica2"
+		}
+		timeout(time: 5, unit: 'MINUTES') {
+			waitForQualityGate abortPipeline: abort
+		}
+	} else return
 }
