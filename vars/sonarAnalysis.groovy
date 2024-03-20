@@ -2,7 +2,7 @@
 def call(boolean abort = false, abortPipeline) {
 	if (abortPipeline != true) {
 		echo 'Ejecución de las pruebas de calidad de código'
-		withSonarQubeEnv(credentialsId: 'sonarqube-token') {
+		withSonarQubeEnv('sonarqube-token') {
 			def scannerHome = tool name: 'SonarScanner'
 			bat "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=practica2 -Dsonar.projectName=Practica2 -Dsonar.projectVersion=${BUILD_NUMBER}-practica2"
 		}
