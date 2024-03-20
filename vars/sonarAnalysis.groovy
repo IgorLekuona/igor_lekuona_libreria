@@ -4,7 +4,8 @@ def call(String env_var = "none", boolean abort = false, abortPipeline) {
 		if (env_var == 'master') {
 			echo 'master'
 			return
-		} else if (String.contains(env_var, 'hotfix')) {
+		}
+		if (String.contains(env_var, 'hotfix')) {
 			echo 'contains hotfix'
 			return
 		} else {
