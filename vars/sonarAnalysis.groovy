@@ -1,6 +1,7 @@
 @NonCPS
 def call(boolean abort = false, abortPipeline) {
 	echo 'SonarQube Analysis Library'
+	return 'Done'
 	// if (abortPipeline !== true) {
 	// 	withSonarQubeEnv(credentialsId: 'sonarqube-token') {
 	// 		bat ‘echo “Ejecución de las pruebas de calidad de código”’
