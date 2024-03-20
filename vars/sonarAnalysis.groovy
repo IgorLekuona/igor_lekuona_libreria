@@ -1,6 +1,7 @@
 @NonCPS
-def call(boolean abort = false, abortPipeline) {
+def call(string env_var = "none", boolean abort = false, abortPipeline) {
 	if (abortPipeline != true) {
+		echo env_var
 		echo 'Ejecución de las pruebas de calidad de código'
 		// withSonarQubeEnv('sonarqube-token') {
 		// 	def scannerHome = tool name: 'SonarScanner'
