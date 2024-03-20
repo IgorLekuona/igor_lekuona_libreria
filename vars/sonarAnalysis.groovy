@@ -1,6 +1,6 @@
 @NonCPS
 def call(boolean abort = false, abortPipeline) {
-	if (abortPipeline !== true) {
+	if (abortPipeline != true) {
 		withSonarQubeEnv(credentialsId: 'sonarqube-token') {
 			echo 'Ejecución de las pruebas de calidad de código'
 			// def scannerHome = tool name: 'SonarScanner'
